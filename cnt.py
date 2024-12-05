@@ -4,8 +4,13 @@ import constants as const
 import numpy as np
 from scipy import spatial
 
+#import sys
+#import resource
+
 import sys
-import resource
+if sys.platform == 'win32':
+    import unittest.mock
+    sys.modules['resource'] = unittest.mock.Mock()
 
 import unit_cell
 
